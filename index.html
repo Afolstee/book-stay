@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Hotels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+    />
+    <link rel="stylesheet" href="sass.scss" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container navbar-container">
+          <a class="navbar-brand" href="#">JAPA.com</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                  <ul class="navbar-nav mr-auto lnav">
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Hotels</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Flight</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Trains</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="#">Cars</a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav mr-auto rnav">
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#">List my hotel</a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="#">Help</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="faqDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          FAQ
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="faqDropdown">
+                          <a class="dropdown-item" href="#">Item 1</a>
+                          <a class="dropdown-item" href="#">Item 2</a>
+                          <a class="dropdown-item" href="#">Item 3</a>
+                      </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="usdDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          USD
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="usdDropdown">
+                          <a class="dropdown-item" href="#">Item 1</a>
+                          <a class="dropdown-item" href="#">Item 2</a>
+                          <a class="dropdown-item" href="#">Item 3</a>
+                      </div>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Lorem</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Lorem</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+      <div class="hero-text ">HOTELS</div>
+      <div class="check-in " id="stickyContainer">
+        <div class="check-in-form">
+          <div class="input-group2 input-group-lg mt-3">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+              placeholder="Destination-City, Landmark or Region"
+            />
+          </div>
+          <div class="input-group2 input-group-lg mt-3">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+              placeholder="Check In"
+            />
+          </div>
+          <div class="input-group2 input-group-lg mt-3">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+              placeholder="Check Out"
+            />
+          </div>
+          <select class="form-select2 mt-3" aria-label="Default select example">
+            <option selected>Number of Rooms</option>
+            <option value="1">1-2</option>
+            <option value="2">3-5</option>
+            <option value="3">6-7</option>
+          </select>
+          <!-- <div class="input-group2 input-group-lg mt-3">
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-lg"
+              placeholder="Number Of Rooms"
+            />
+            </div> -->
+          <button type="button" class="btn btn-primary mt-3">Search</button>
+        </div>
+        <div class="form-check ms-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            value=""
+            id="flexCheckDefault"
+          />
+          <label class="form-check-label" for="flexCheckDefault">
+            I'm traveling for vacation
+          </label>
+        </div>
+    </header>
+    <div class="main-container">
+      <div class="deals">
+        <h1 class="text-deals">Top Deals This Month</h1>
+        <div class="dis-img mt-4">
+          <figure class="figure">
+            <img
+              src="images/discount1.jpg"
+              class="figure-img img-fluid rounded"
+              alt="..."
+            />
+            <h6 class="upper">Lorem ipisum</h6>
+            <h6 class="lower">Get 50% discount off</h6>
+          </figure>
+          <figure class="figure">
+            <img
+              src="images/discount2.jpg"
+              class="figure-img img-fluid rounded"
+              alt="..."
+            />
+            <h6 class="upper">Lorem ipisum</h6>
+            <h6 class="lower">Get 50% discount off</h6>
+          </figure>
+          <figure class="figure">
+            <img
+              src="images/discount3.jpeg"
+              class="figure-img img-fluid rounded"
+              alt="..."
+            />
+            <h6 class="upper">Lorem ipisum</h6>
+            <h6 class="lower">Get 50% discount off</h6>
+          </figure>
+        </div>
+      </div>
+      <div class="dwnload">
+        <div class="container1">
+          <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+          <a href="#"><i class="ri-instagram-line"></i></a>
+          <a href="#"><i class="ri-twitter-fill"></i></a>
+        </div>
+        <div class="store">
+          <img class="appstore" src="images/appstore.png" alt="" />
+          <img class="playstore" src="images/playstore.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="kiddies">
+      <div class="row nanny">
+        <div class="col-5 child">
+          <h1 class="baby-text">Discover Family-Friendly Hospitality!</h1>
+          <br />
+          <p class="baby-text2">
+            At JAPA HOTELS, we take family comfort to heart! We are thrilled to
+            announce that we now offer dedicated nanny services to make your
+            stay truly exceptional.
+          </p>
+        </div>
+        <div class="col-5 child">
+          <img src="images/child.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="hotels-5">
+      <h1 class="pop-5-star">5-STAR HOTELS</h1>
+      <div class="container2">
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/abuja.jpeg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">71 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text1">71 luxury hotels in Abuja</p>
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+            <p class="text2">₦95K- ₦150K</p>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/lagos.jpg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">75 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text1">85 luxury hotels in Lagos</p>
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+            <p class="text2">₦90K- ₦140K</p>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/ibadan.jpeg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">42 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text1">50 luxury hotels in Ibadan</p>
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+            <p class="text2">₦50K- ₦120K</p>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/ph.jpeg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">55 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text1">68 luxury hotels in Kaduna</p>
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+            <p class="text2">₦65K- ₦130K</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hotels-6">
+      <div class="restaurants">Affiliate Restaurants</div>
+      <div class="container2">
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/bitemore.jpeg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">71 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text1">BITEMORE</p>
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/foodco.jpg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">71 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/kilimanjaro.jpg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">71 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="abuja">
+            <div class="abj-img">
+              <img src="images/kfc.jpeg" alt="" class="abuja-pic" />
+            </div>
+            <p class="rating">71 reviews</p>
+          </div>
+          <div class="abuja-caption">
+            <p class="text3">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum at
+              debitis nostrum eaque.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faq">
+      <h1 class="faq-text">FAQ.</h1>
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseOne"
+              aria-expanded="false"
+              aria-controls="flush-collapseOne"
+            >
+              Travel Agency policy
+            </button>
+          </h2>
+          <div
+            id="flush-collapseOne"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingOne"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Blanditiis beatae nesciunt provident nemo sapiente necessitatibus
+              soluta adipisci error quisquam! Provident unde dignissimos ea
+              dicta quam fuga excepturi, numquam eius ad!
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseTwo"
+              aria-expanded="false"
+              aria-controls="flush-collapseTwo"
+            >
+              Requirements for rentals
+            </button>
+          </h2>
+          <div
+            id="flush-collapseTwo"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingTwo"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Laudantium maiores nihil porro hic fugit placeat officia
+              voluptate. Ipsum nulla similique ducimus provident consectetur
+              quasi consequatur itaque, iusto minus pariatur expedita?
+              Accusantium consequuntur magnam repellendus ipsa ipsam amet eos
+              porro, error quidem vitae id nostrum dolore facere, cupiditate,
+              fugiat tempora et? Debitis officia accusantium, praesentium soluta
+              excepturi inventore fugiat placeat minima.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#flush-collapseThree"
+              aria-expanded="false"
+              aria-controls="flush-collapseThree"
+            >
+              Referral contest
+            </button>
+          </h2>
+          <div
+            id="flush-collapseThree"
+            class="accordion-collapse collapse"
+            aria-labelledby="flush-headingThree"
+            data-bs-parent="#accordionFlushExample"
+          >
+            <div class="accordion-body">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum
+              tempora, iste commodi ut omnis quam, quis perferendis, quidem id
+              soluta eveniet sunt nostrum tenetur quo quia maxime animi? Ullam,
+              natus. Possimus, incidunt officia asperiores adipisci, deleniti,
+              tempora nulla dolorem autem facilis nam fuga quidem aliquid quia.
+              Recusandae velit maiores deleniti similique. Quo, officia velit
+              soluta fugit earum quae enim exercitationem.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-hero">
+      <div class="bottom-hero2">
+        <h3 class="book">Find & Book Favorable Hotels with JAPA.com</h3>
+        <p class="book-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non corrupti
+          reprehenderit adipisci ipsum veniam. Libero laboriosam quaerat iste
+          doloribus beatae. Inventore aspernatur quidem, consequuntur culpa fuga
+          odit quis exercitationem autem. Incidunt beatae odit alias a amet
+          architecto vel libero praesentium reprehenderit, quasi aliquid in cum
+          similique quis quas voluptas iure delectus eius temporibus. Debitis
+          voluptatum iure distinctio culpa molestiae itaque? Fuga dolorum natus
+          saepe error rem cumque ad, ullam, ab, quam expedita quibusdam sapiente
+          possimus. Excepturi cumque vel quasi non incidunt, fuga expedita nihil
+          dignissimos similique quisquam tempore, doloribus esse?
+        </p>
+      </div>
+    </div>
+    <div class="bottom-hero">
+      <div class="bottom-hero2">
+        <h3 class="book">Conference rooms and halls now available.</h3>
+        <p class="book-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non corrupti
+          reprehenderit adipisci ipsum veniam. Libero laboriosam quaerat iste
+          doloribus beatae. Inventore aspernatur quidem, consequuntur culpa fuga
+          odit quis exercitationem autem. Incidunt beatae odit alias a amet
+          architecto vel libero praesentium reprehenderit, quasi aliquid in cum
+          similique quis quas voluptas iure delectus eius temporibus. Debitis
+          voluptatum iure distinctio culpa molestiae itaque?
+        </p>
+      </div>
+    </div>
+    <div class="featured">
+      <h3 class="featured-text">Featured Hotel Destinations</h3>
+      <div class="featured-link1">
+        <div class="featured-link"><a href="#">Abuja</a></div>
+        <div class="featured-link"><a href="#">Lagos</a></div>
+        <div class="featured-link"><a href="#">Ibadan</a></div>
+        <div class="featured-link"><a href="#">Owerri</a></div>
+        <div class="featured-link"><a href="#">Benue</a></div>
+        <div class="featured-link"><a href="#">Bauchi</a></div>
+        <div class="featured-link"><a href="#">Anambra</a></div>
+        <div class="featured-link"><a href="#">Kaduna</a></div>
+        <div class="featured-link"><a href="#">Adamawa</a></div>
+        <div class="featured-link"><a href="#">Ijebu</a></div>
+        <div class="featured-link"><a href="#">Cross Rivers</a></div>
+        <div class="featured-link"><a href="#">Osogbo</a></div>
+      </div>
+      <div class="featured-link2">
+        <div class="featured-link11"><a href="#">Ogun</a></div>
+        <div class="featured-link11"><a href="#">Ondo</a></div>
+        <div class="featured-link11"><a href="#">Jos</a></div>
+        <div class="featured-link11"><a href="#">Uyo</a></div>
+        <div class="featured-link11"><a href="#">FCT</a></div>
+        <div class="featured-link11"><a href="#">Kogi</a></div>
+        <div class="featured-link11"><a href="#">Edo</a></div>
+        <div class="featured-link11"><a href="#">Oyo</a></div>
+      </div>
+    </div>
+    <div class="contact">
+      <div class="contact-us">
+        <div class="item-contact">
+          <h3 class="contact-medium">Contact us</h3>
+          <a href="#" class="contact-item"> Customer Support</a>
+          <a href="#" class="contact-item"> Service Guarantee</a>
+          <a href="#" class="contact-item"> Website Feedback</a>
+          <div class="icons4">
+            <a href="#"><i class="ri-facebook-circle-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+          </div>
+        </div>
+        <div class="item-contact">
+          <h3 class="contact-medium">About</h3>
+          <a href="#" class="contact-item"> About Japa.com </a>
+          <a href="#" class="contact-item"> News</a>
+          <a href="#" class="contact-item">Careers</a>
+          <a href="#" class="contact-item"> Terms & Conditions</a
+          ><a href="#" class="contact-item"> Privacy Statement</a>
+          <a href="#" class="contact-item"> About Japa.com Group</a>
+        </div>
+        <div class="item-contact">
+          <h3 class="contact-medium">Other Services</h3>
+          <a href="#" class="contact-item"> Investor Relations</a>
+          <a href="#" class="contact-item"> Japa.com Rewards</a>
+          <a href="#" class="contact-item"> Affiliate Program</a>
+          <a href="#" class="contact-item"> List My Hotel</a>
+          <a href="#" class="contact-item"> All Hotels</a>
+          <a href="#" class="contact-item"> Become a Supplier</a>
+        </div>
+      </div>
+      <div class="payment">
+        <h3 class="contact-medium">Payment</h3>
+        <div class="icons2">
+          <a href="#"><img src="images/Mastercard-logo-sq.png" alt="" /></a>
+          <a href="#"><i class="ri-visa-line"></i></a>
+          <a href="#"><img src="images/paypal.png" alt="" /></a>
+          <a href="#"><img src="images/applepay.jpeg" alt="" /></a>
+        </div>
+        <h3 class="contact-medium2">Our Partners</h3>
+        <div class="partners">
+          <a href="#"><img src="images/google.png" alt="" /></a>
+          <a href="#"><img src="images/samsung.png" alt="" /></a>
+        </div>
+      </div>
+    </div>
+    <p class="foot">
+      Copyright &copy; Japa.com Travel Nigeria Pte. Ltd. All rights reserved
+    </p>
+
+    <script src="json.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="/js/bootstrap.bundle.js"></script> -->
+  </body>
+</html>
+

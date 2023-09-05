@@ -1,0 +1,683 @@
+var frameMgr = (function() {
+  function RemitaFrameManager(settings) {
+//    debug('initializing report scripts...');
+    var mgr = this;
+
+    this.createDatePicker = function(ctrl, options) {
+      return $(ctrl).datepicker($.extend(this.settings.dateOptions, options));
+    };
+
+    this.setupDateRanges = function() {
+      $.each($('div.rem-date-range'), function(index, divEl) {
+        try {
+          var fromCtrl = $(divEl).find('.from');
+          var toCtrl = $(divEl).find('.to');
+
+          var rangeOptions = {
+            fromControl: "input[name='" + fromCtrl.prop('name') + "']",
+            toControl: "input[name='" + toCtrl.prop('name') + "']",
+            fromOptions: {
+              day: "select[name='" + fromCtrl.data('day') + "']",
+              month: "select[name='" + fromCtrl.data('month') + "']",
+              year: "select[name='" + fromCtrl.data('year') + "']"
+            },
+            toOptions: {
+              day: "select[name='" + toCtrl.data('day') + "']",
+              month: "select[name='" + toCtrl.data('month') + "']",
+              year: "select[name='" + toCtrl.data('year') + "']"
+            }
+          };
+
+          mgr.createDateRange(rangeOptions);
+        } catch (err) {
+          debug(err);
+        }
+      });
+
+      return this;
+    };
+
+    this.setupDateRange = function(divElement) {
+      $.each($(divElement), function(index, divEl) {
+        try {
+          var fromCtrl = $(divEl).find('.from');
+          var toCtrl = $(divEl).find('.to');
+
+          var rangeOptions = {
+            fromControl: "input[name='" + fromCtrl.prop('name') + "']",
+            toControl: "input[name='" + toCtrl.prop('name') + "']",
+            fromOptions: {
+              day: "select[name='" + fromCtrl.data('day') + "']",
+              month: "select[name='" + fromCtrl.data('month') + "']",
+              year: "select[name='" + fromCtrl.data('year') + "']"
+            },
+            toOptions: {
+              day: "select[name='" + toCtrl.data('day') + "']",
+              month: "select[name='" + toCtrl.data('month') + "']",
+              year: "select[name='" + toCtrl.data('year') + "']"
+            }
+          };
+
+          mgr.createDateRange(rangeOptions);
+        } catch (err) {
+          debug(err);
+        }
+      });
+
+      return this;
+    };
+
+    this.setupMonthPicker = function() {
+      $.each($('input.rem-month-picker'), function(index, controlInput) {
+        try {
+          debug(controlInput);
+          debug('inside month picker');
+          var monthOptions = {
+            control: "input[name='" + $(controlInput).prop('name') + "']",
+            options: {
+              month: "select[name='" + $(controlInput).data('month') + "']",
+              year: "select[name='" + $(controlInput).data('year') + "']"
+            }
+          };
+
+          debug(monthOptions);
+
+          var yearRangeOption = mgr.addYearRange(controlInput);
+
+          $(controlInput)
+            .datepicker(
+              $.extend(mgr.settings.monthOptions, yearRangeOption, {
+                onClose: function(selectedDate, pickerInst) {
+                  var month = pickerInst.drawMonth;
+                  var year = pickerInst.drawYear;
+
+                  var date = new Date(year, month, 1);
+                  mgr.resolveForOldMonth(date, monthOptions.options);
+                  $(this).val($.datepicker.formatDate('MM yy', date));
+                }
+              })
+            )
+            .focus(function() {
+              mgr.handleMonthFocus(this);
+            });
+        } catch (err) {
+          debug(err);
+        }
+      });
+    };
+    this.setupDatePicker = function() {
+      $.each($('input.rem-date-picker'), function(index, controlInput) {
+        try {
+          var setupDateOptions = {
+            control: "input[name='" + $(controlInput).prop('name') + "']",
+            options: {
+              day: "select[name='" + $(controlInput).data('day') + "']",
+              month: "select[name='" + $(controlInput).data('month') + "']",
+              year: "select[name='" + $(controlInput).data('year') + "']"
+            }
+          };
+          var yearRangeOption = mgr.addYearRange(controlInput);
+          $(controlInput).datepicker(
+            $.extend(mgr.settings.dateOptions, yearRangeOption, {
+              onSelect: function(selectedDate, pickerInst) {
+                mgr.resolveForOldDate(
+                  selectedDate,
+                  pickerInst,
+                  setupDateOptions.options
+                );
+              }
+            })
+          );
+        } catch (err) {
+          debug(err);
+        }
+      });
+    };
+
+    this.addYearRange = function(controlInput) {
+      var yearRange = $(controlInput).data('yearrange');
+      var yearRangeOption = {};
+      if ($.type(yearRange) != 'undefined' && $.type(yearRange) != 'null') {
+        yearRangeOption.yearRange = yearRange;
+      }
+      return yearRangeOption;
+    };
+
+    this.setupMonthRanges = function() {
+      $.each($('div.rem-month-range'), function(index, divEl) {
+        try {
+          var fromCtrl = $(divEl).find('.from');
+          var toCtrl = $(divEl).find('.to');
+
+          var monthOptions = {
+            fromControl: "input[name='" + fromCtrl.prop('name') + "']",
+            toControl: "input[name='" + toCtrl.prop('name') + "']",
+            fromOptions: {
+              month: "select[name='" + fromCtrl.data('month') + "']",
+              year: "select[name='" + fromCtrl.data('year') + "']"
+            },
+            toOptions: {
+              month: "select[name='" + toCtrl.data('month') + "']",
+              year: "select[name='" + toCtrl.data('year') + "']"
+            }
+          };
+
+          $(fromCtrl)
+            .datepicker({
+              dateFormat: 'MM yy',
+              changeMonth: true,
+              changeYear: true,
+              showButtonPanel: true,
+
+              onClose: function(selectedDate, pickerInst) {
+                debug(pickerInst);
+                var month = pickerInst.drawMonth;
+                var year = pickerInst.drawYear;
+
+                var date = new Date(year, month, 1);
+                mgr.resolveForOldMonth(date, monthOptions.fromOptions);
+                $(this).val($.datepicker.formatDate('MM yy', date));
+              }
+            })
+            .focus(function() {
+              mgr.handleMonthFocus(this);
+            });
+
+          $(toCtrl)
+            .datepicker({
+              dateFormat: 'MM yy',
+              changeMonth: true,
+              changeYear: true,
+              showButtonPanel: true,
+
+              onClose: function(selectedDate, pickerInst) {
+                var month = pickerInst.drawMonth;
+                var year = pickerInst.drawYear;
+
+                var date = new Date(year, month, 1);
+                mgr.resolveForOldMonth(date, monthOptions.toOptions);
+                $(this).val($.datepicker.formatDate('MM yy', date));
+              }
+            })
+            .focus(function() {
+              mgr.handleMonthFocus(this);
+            });
+        } catch (err) {
+          debug(err);
+        }
+      });
+    };
+
+    this.handleMonthFocus = function(element) {
+      $('.ui-datepicker-calendar').hide();
+      $('#ui-datepicker-div').position({
+        my: 'center top',
+        at: 'center bottom',
+        of: $(element)
+      });
+    };
+
+    this.createDateRange = function(rangeOptions) {
+      var fromControl = rangeOptions.fromControl;
+      var toControl = rangeOptions.toControl;
+      $(fromControl).datepicker(
+        $.extend(
+          {
+            onClose: function(selectedDate) {
+              $(toControl).datepicker('option', 'minDate', selectedDate);
+            },
+            onSelect: function(selectedDate, pickerInst) {
+              mgr.resolveForOldDate(
+                selectedDate,
+                pickerInst,
+                rangeOptions.fromOptions
+              );
+            }
+          },
+          this.settings.dateOptions
+        )
+      );
+
+      $(toControl).datepicker(
+        $.extend(
+          {
+            onClose: function(selectedDate) {
+              // $(fromControl).datepicker( "option", "maxDate",
+              // selectedDate
+              // );
+            },
+            onSelect: function(selectedDate, pickerInst) {
+              mgr.resolveForOldDate(
+                selectedDate,
+                pickerInst,
+                rangeOptions.toOptions
+              );
+            }
+          },
+          this.settings.dateOptions
+        )
+      );
+
+      return this;
+    };
+
+    this.settings = {
+      dateOptions: {
+        dateFormat: 'dd/mm/yy',
+        changeYear: true,
+        changeMonth: true
+      },
+
+      monthOptions: {
+        dateFormat: 'MM yy',
+        changeMonth: true,
+        changeYear: true,
+        showButtonPanel: true
+      },
+      keyboardInput: null,
+      keyboardOptions: {
+        layout: 'custom',
+        lockInput: true,
+        usePreview: false,
+        position: {
+          my: 'center top',
+          at: 'center bottom',
+          of: null
+        },
+        openOn: 'focus mouseenter',
+        closeOn: 'blur mouseleave',
+        autoAccept: true,
+        customLayout: {
+          default: ['1 2 3 4', '5 6 7 {b}', '8 9 0 {clear}']
+        },
+        css: {
+          buttonHover: 'btn-primary'
+        }
+      },
+      keyboardScrambleOptions: {
+        targetKeys: /[\d]/i, // keys to randomize
+        byRow: false, // randomize by row, otherwise randomize all
+        randomizeOnce: false
+      }
+    };
+
+    this.resolveForOldDate = function(selectedDate, pickerInst, options) {
+      try {
+        var selectedDay = parseInt(pickerInst.selectedDay);
+        $.each($(options.day).find('option'), function(index, option) {
+          if (parseInt(option.value) == selectedDay) {
+            $(option).prop('selected', true);
+            return false;
+          }
+        });
+
+        var selectedMonth = parseInt(pickerInst.selectedMonth) + 1;
+
+        $.each($(options.month).find('option'), function(index, option) {
+          if (parseInt($.trim(option.value), 10) == selectedMonth) {
+            $(option).prop('selected', true);
+            return false;
+          }
+        });
+
+        $(options.year).val(pickerInst.selectedYear);
+        $(document).trigger('datepicker_onselect', pickerInst);
+      } catch (err) {}
+    };
+
+    this.resolveForOldMonth = function(date, options) {
+      try {
+        var selectedMonth = date.getMonth() + 1;
+        $.each($(options.month).find('option'), function(index, option) {
+          if (parseInt(option.value) == selectedMonth) {
+            $(option).prop('selected', true);
+            return false;
+          }
+        });
+        $(options.year).val(date.getFullYear());
+      } catch (err) {}
+    };
+
+    this.padDateNumber = function(number) {
+      if (number < 10) {
+        number = '0' + number;
+      }
+      return number;
+    };
+
+    this.showProcessingMessage = function(message) {
+      this.clearMessage();
+      this.showProgressbar();
+      try {
+        this.getPageGlobals().showProcessingMessageBox(
+          MESSAGE_BUNDLE.getKey(message)
+        );
+      } catch (err) {
+        //debug(err);
+        $('i.message-box').html(message);
+        $('span#processLoader').removeClass('hidden');
+      }
+    };
+
+    this.removeProcessingMessage = function() {
+      this.removeProgressbar();
+      try {
+        this.getPageGlobals().removeProcessingMessageBox();
+      } catch (err) {
+        //debug(err);
+        $('i.message-box').html('');
+        $('#processLoader').addClass('hidden');
+      }
+    };
+
+    this.getPageGlobals = function() {
+      try {
+        var parentWindow = window;
+        while (parentWindow.top.document !== parentWindow.document) {
+          parentWindow = parentWindow.parent;
+        }
+        return parentWindow.pageGlobals;
+      } catch (err) {
+        throw err;
+      }
+    };
+
+    this.submitFrameForm = function(form) {
+      $('#upload-iframe').load(function() {
+        $(this)
+          .contents()
+          .find('#file_upload_form')
+          .submit(function() {
+            // $("input[name='fileuploaded']").val() = "1"; //its wrong
+            // way
+            $("input[name='fileuploaded']").val(1); // updated
+            return true;
+          });
+      });
+    };
+
+    this.showProcessingWindow = function(message) {
+      try {
+        this.getPageGlobals().showProcessingMessageForContentArea(message);
+      } catch (err) {
+        //debug(err);
+        this.showProcessingMessage(message);
+      }
+    };
+
+    this.removeProcessingWindow = function() {
+      try {
+        this.getPageGlobals().removeProcessingMessageForContentArea();
+      } catch (err) {
+        //debug(err);
+        this.removeProcessingMessage();
+      }
+    };
+
+    this.setupToggleCheckers = function() {
+      $.each($("input[type='checkbox'].toggle-checker"), function(
+        index,
+        toggler
+      ) {
+        try {
+          $(toggler).click(function() {
+            if ($(this).is(':checked')) {
+              $("input[type='checkbox'].toggle-checkee").prop('checked', true);
+            } else {
+              $("input[type='checkbox'].toggle-checkee").prop('checked', false);
+            }
+          });
+        } catch (err) {
+          // debug(err);
+        }
+      });
+    };
+
+    this.setupKeypad = function() {
+      try {
+        $('input.rem-keypad')
+          .keyboard(this.settings.keyboardOptions)
+          .addScramble(this.settings.keyboardScrambleOptions);
+        if (!this.isIPad()) {
+          $(document).on('mouseleave', '.ui-keyboard-has-focus', function() {
+            $(this)
+              .keyboard()
+              .getkeyboard()
+              .accept();
+          });
+        }
+      } catch (err) {}
+    };
+
+    this.buildOnOffSwitch = function(selector, params) {
+      $(selector).bootstrapSwitch(
+        $.extend(
+          {
+            size: 'mini',
+            animate: false,
+            onText: 'Yes',
+            offText: 'No',
+            onColor: 'info'
+          },
+          params
+        )
+      );
+    };
+
+    this.init = function() {
+      // debug('initializing frames block...');
+      this.clearSystemMessages();
+      this.resolveOverlayStatus();
+      this.setupDateRanges();
+      this.setupMonthRanges();
+      this.setupMonthPicker();
+      this.setupDatePicker();
+      this.setupToggleCheckers();
+      this.setupKeypad();
+    };
+
+    this.resolveOverlayStatus = function() {
+      try {
+        this.getPageGlobals().resolveOverlayStatus();
+      } catch (err) {
+        //debug(err);
+      }
+    };
+
+    this.clearSystemMessages = function() {
+      this.removeProcessingMessage();
+      this.removeProcessingWindow();
+      this.clearMessage();
+    };
+
+    this.clearMessage = function() {
+      $('span#sys-message-detail').html('');
+      $('div#sys-message-holder').removeClass('alert-danger alert-success');
+      $('div#messages-loading').html('');
+      $(
+        'div#sys-message-holder, span#sys-failed-message, span#sys-ok-message'
+      ).addClass('hidden');
+    };
+
+    this.showMessage = function(msg, isSuccessful) {
+      $('span#sys-message-detail').html(MESSAGE_BUNDLE.getKey(msg));
+      if (isSuccessful) {
+        $('span#sys-ok-message').removeClass('hidden');
+        $('span#sys-failed-message').addClass('hidden');
+        $('div#sys-message-holder').switchClass(
+          'alert-danger',
+          'alert-success'
+        );
+      } else {
+        $('span#sys-ok-message').addClass('hidden');
+        $('span#sys-failed-message').removeClass('hidden');
+        $('div#sys-message-holder').switchClass(
+          'alert-success',
+          'alert-danger'
+        );
+      }
+      $('div#sys-message-holder').removeClass('hidden');
+    };
+
+    this.showProgressbar = function() {
+      try {
+        this.getPageGlobals().showProgressbar();
+      } catch (err) {}
+      return this;
+    };
+    this.removeProgressbar = function() {
+      try {
+        this.getPageGlobals().removeProgressbar();
+      } catch (err) {
+        //debug(err);
+      }
+    };
+
+    this.loadPage = function(context, url) {
+      try {
+        this.getPageGlobals().callpage({
+          description: '-',
+          link: url,
+          id: '-'
+        });
+      } catch (err) {
+        debug('problem using app page loader. Switching to default...');
+        window.location.href = context + '/' + url;
+      }
+    };
+
+    this.uploadFile = function(fileId, uploadUrl) {
+      var deferred = $.Deferred();
+      try {
+        var formData = this.createFormData();
+        if (formData !== null) {
+          debug('Using FormData');
+          var fileCtrl = document.getElementById(fileId);
+          formData.append($(fileCtrl).prop('name'), fileCtrl.files[0]);
+          deferred = $.ajax({
+            url: uploadUrl,
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            cache: false,
+            processData: false,
+            contentType: false
+          });
+        } else {
+          debug('FormData Fallback: DO NOT TRY THIS AT HOME');
+          var fileToBeUploaded = $('#' + fileId);
+          var iframe = this.createTemporaryUploadIframe(fileToBeUploaded);
+          var uploadFormObj = this.createFormForFileUpload(iframe, uploadUrl);
+
+          uploadFormObj.on('submit', function() {
+            frameMgr.addUploadBehaviourForPromiseResolution(
+              uploadFormObj,
+              iframe,
+              deferred
+            );
+          });
+          fileToBeUploaded.clone(true).insertAfter(fileToBeUploaded);
+          fileToBeUploaded.appendTo(uploadFormObj);
+          uploadFormObj.submit();
+        }
+      } catch (err) {
+        debug(err);
+        deferred.reject(err);
+      }
+      return deferred.promise();
+    };
+
+    this.createFormData = function() {
+      try {
+        return new FormData();
+      } catch (err) {
+        debug("can't create formdata. Returning null");
+      }
+      return null;
+    };
+    this.createTemporaryUploadIframe = function(fileToBeUploaded) {
+      return $('<iframe>')
+        .prop({
+          class: 'hide',
+          name: 'remita_upload_form_' + new Date().getTime()
+        })
+        .insertAfter(fileToBeUploaded.closest('form'));
+    };
+
+    this.createFormForFileUpload = function(iframe, uploadUrl) {
+      return $('<form>')
+        .prop({
+          target: iframe.prop('name'),
+          method: 'POST',
+          enctype: 'multipart/form-data',
+          encoding: 'multipart/form-data',
+          action: uploadUrl,
+          class: 'hide'
+        })
+        .insertAfter(iframe);
+    };
+
+    this.addUploadBehaviourForPromiseResolution = function(
+      formObj,
+      iframe,
+      deferred
+    ) {
+      iframe.on('load', function() {
+        deferred.resolve(
+          $.parseJSON(
+            $(this)
+              .contents()
+              .find('body')
+              .html()
+          )
+        );
+        formObj.remove();
+        $(this).remove();
+      });
+    };
+
+    this.resizeIframe = function(iframeSelector) {
+      try {
+        $(iframeSelector).on('load', function() {
+          this.style.height =
+            this.contentWindow.document.body.scrollHeight + 'px';
+        });
+      } catch (err) {
+        debug(err);
+      }
+      return this;
+    };
+
+    this.isIPad = function() {
+      try {
+        return (
+          navigator.platform.indexOf('iPad') != -1 ||
+          navigator.platform.indexOf('iPhone') != -1 ||
+          navigator.platform.indexOf('iPod') != -1
+        );
+      } catch (err) {
+        debug(err);
+      }
+      return false;
+    };
+
+    this.getMessageCounts = function() {
+      try {
+        this.getPageGlobals().getMessageCounts();
+      } catch (err) {
+        debug(err);
+      }
+    };
+
+    this.showCountDown = function(selector, numberStart) {
+      $(selector).html(numberStart);
+      setInterval(function() {
+        $(selector).html(--numberStart);
+      }, 1000);
+    };
+  }
+
+  var manager = new RemitaFrameManager();
+  manager.init();
+  return manager;
+})();
