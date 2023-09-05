@@ -66,9 +66,8 @@ header {
   cursor: pointer;
 }
 .rnav {
-  right: 10%;
-  position: absolute;
-}
+  justify-content: right;}
+
 .nav-item:hover,
 .rnav-item:hover {
   border-bottom: 2px solid white;
@@ -769,24 +768,33 @@ button.accordion-button:focus {
   z-index: 1000;
   color: ;
 }
-/* Your existing styles for the header can go here */
+
 
 @media (max-width: 880px) {
-  .navbar-brand {
-    margin: -10% 0 !important;
+  
+    .navbar-toggler {
+        display: block;
+    }
 
-  }
-  .rnav {
-    margin: 10% 0 !important;
-  }
+    .navbar-collapse.collapsed {
+        background-color: white;
+        padding: 10px 0;
+        display: flex !important;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-  .navbar-collapse {
-    display: none; /* Hide the collapsed menu by default */
+    .navbar-collapse.collapsed .nav-item {
+        margin: 5px 0;
+    }
+}
+@media (max-width: 860px) {
+  .navbar-container {
+    margin: 0;
   }
+}
 
-  .navbar-expand-md .navbar-collapse.collapsing {
-    display: block !important; /* Override Bootstrap's default collapsing behavior */
-  }
 
   /* .left-navbar,
   .mid-navbar,
@@ -817,22 +825,9 @@ button.accordion-button:focus {
   }
 } */
   /* Center align items vertically when collapsed */
-  .navbar-collapse.collapsing {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Style for the collapsed menu items */
-  .navbar-collapse.collapse.show {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  /* Adjust the spacing */
-  .navbar-collapse.collapse.show {
-    margin-bottom: 10px; /* Adjust as needed */
-  }
+  
 }
+.navbar-toggler {
+  
+}
+
