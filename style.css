@@ -184,6 +184,7 @@ header {
 .check-in-form {
   display: flex;
   justify-content: space-evenly;
+  
 }
 .input-group2 {
   width: 22%;
@@ -192,7 +193,10 @@ header {
   flex-wrap: wrap;
   align-items: stretch;
   justify-content: space-evenly;
-  margin: ;
+  margin: 0 1%;
+}
+.btn-primary {
+  margin: 0 1%;
 }
 .form-control::placeholder {
   font-size: 16px;
