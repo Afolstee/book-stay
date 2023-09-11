@@ -161,7 +161,6 @@ header {
   position: absolute;
   top: 6%;
   border-radius: 5px;
-  z-index: 10000;
   left: 2%;
 }
 /* #stickyContainer {
