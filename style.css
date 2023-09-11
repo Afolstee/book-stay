@@ -174,7 +174,7 @@ header {
   font-size: 48px;
   position: absolute;
   top: 4%;
-  z-index: 100000;
+  
   left: 2%;
 }
 .col-4 {
@@ -264,7 +264,7 @@ header {
 }
 .figure {
   width: 30%;
-  height: 170px;
+  height: 80%;
   right: 10%;
 }
 .upper {
