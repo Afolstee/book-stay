@@ -4,7 +4,7 @@
 }
 body {
   width: auto;
-  position: relative;
+  
 }
 header {
   min-width: 100%;
@@ -159,7 +159,7 @@ header {
   height: 100px;
   background: #fff;
   position: absolute;
-  top: 6%;
+  top: 70%;
   border-radius: 5px;
   left: 2%;
 }
@@ -173,7 +173,7 @@ header {
   font-weight: 700;
   font-size: 48px;
   position: absolute;
-  top: 4%;
+  top: 25%;
   
   left: 2%;
 }
@@ -230,7 +230,7 @@ header {
   display: block;
   background: #fff;
   width: 100%;
-  height: 500px;
+  height: 326px;
   position: relative;
   z-index: 1;
   box-shadow: inset 2px 2px 3px 0px rgba(255, 255, 255, 0.5);
@@ -241,9 +241,9 @@ header {
 }
 .deals {
   width: 80%;
-  height: 440px;
+  height: 90%;
   position: absolute;
-  top: 10%;
+  top: 4%;
   left: 10%;
 }
 .text-deals {
@@ -295,33 +295,27 @@ header {
   position: relative;
   left: 1%;
   bottom: 0;
-  margin: 0 2%;
+  margin: 2%;
+  
 }
 .kiddies:hover {
   cursor: pointer;
 }
 
 .dwnload {
-  width: 30%;
-  height: 90px;
-  /* background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.3%); */
+  width: 100%;
   position: absolute;
+  /* background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.3%); */;
   align-items: center;
-  top: 72%;
-  left: 34%;
-  display: none;
+  display: block;
+  
 }
 .container1 {
-  width: 88%;
-  height: 50%;
-  background: #212529;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
-  left: 6%;
-  position: absolute;
+  justify-content: space-evenly;
 }
-.store {
+/* .store {
   width: 88%;
   height: 50%;
   background: #212529;
@@ -329,19 +323,19 @@ header {
   top: 50%;
   position: absolute;
   justify-items: center;
-}
+} */
 .container1 i {
   display: ;
   font-size: 26px;
-  color: #fff;
+  color: black;
   transition: all 0.3s ease;
   border-bottom: none;
 }
 .playstore {
   width: 30px;
   height: 26px;
-  position: absolute;
-  left: 64%;
+  /* position: absolute;
+  left: 64%; */
 }
 .playstore:hover {
   cursor: pointer;
@@ -350,8 +344,8 @@ header {
 .appstore {
   width: 47px;
   height: 26px;
-  position: absolute;
-  left: 28%;
+  /* position: absolute;
+  left: 28%; */
 }
 .appstore:hover {
   cursor: pointer;
