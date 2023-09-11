@@ -159,7 +159,7 @@ header {
   height: 100px;
   background: #fff;
   position: absolute;
-  top: 55%;
+  top: 50%;
   border-radius: 5px;
   left: 2%;
 }
@@ -173,7 +173,7 @@ header {
   font-weight: 700;
   font-size: 48px;
   position: absolute;
-  top: 40%;
+  top: 35%;
   
   left: 2%;
 }
