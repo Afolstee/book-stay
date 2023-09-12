@@ -500,7 +500,7 @@ h1 {
 }
 .rating {
   background: #4d9543;
-  z-index: ;
+  z-index: 100000;
   position: absolute;
   border-radius: 16px;
   width: 42%;
