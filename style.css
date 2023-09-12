@@ -4,6 +4,7 @@
 }
 body {
   width: auto;
+  font-size: 16px;
   
 }
 header {
@@ -354,8 +355,6 @@ header {
   text-decoration: none;
 }
 .nanny {
-  top: 5%;
-  position: absolute;
   height: auto;
   justify-content: space-around;
   padding: 0;
@@ -393,7 +392,7 @@ h1 {
   font-size: 1.3125rem;
   height: 100%;
 }
-.container2 {
+.container3 {
   display: inline-flex;
   justify-content: center;
   position: absolute;
@@ -422,7 +421,9 @@ h1 {
   font-weight: 800;
   font-size: 30px;
   font-family: "Times New Roman", Times, serif;
-  margin: 30px 18px;
+  position: absolute;
+  margin-bottom: 0;
+  left: 2%;
 }
 .abuja {
   width: 100%;
@@ -451,26 +452,37 @@ h1 {
   background: rgb(238, 226, 226);
   position: relative;
 }
+
 .abuja-caption p {
   margin-bottom: 0;
-  position: absolute;
-  text-align: center;
+  /* text-align: center; */
 }
+/* .abuja-caption h6 {
+  padding: 6% 0%;
+  margin-bottom: 0;
+  margin: 0% 3%;
+  
+} */
+.abuja-heading {
+  position: absolute;
+  top: 12%;
+  margin-bottom: 0;
+  text-align: center;
 
+}
 .text2 {
-  right: 0;
-  top: 8%;
   font-size: 15px;
   font-weight: bold;
   color: red;
   animation: flash 2s infinite;
+  float: right;
 }
 .text1 {
   font-weight: 700;
   font-size: 20px;
-  top: 20%;
+  padding: 3% 0%;
   font-family: "Times New Roman", Times, serif;
-  left: 11%;
+  
 }
 .text1:hover {
   text-decoration: underline;
@@ -479,12 +491,13 @@ h1 {
   cursor: pointer;
 }
 .text3 {
-  top: 40%;
   color: #000;
   font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
   position: absolute;
+  top: 36%;
+  text-align: center;
 }
 
 @keyframes flash {
@@ -828,15 +841,7 @@ button.accordion-button:focus {
   
 }
 
-@media (max-width: 768px) {
-    .child-img {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: ;
-      height: ;
-    }
-  }
+
 /* For desktop screens (greater than or equal to 768px) */
 @media (min-width: 768px) {
   .desktop-image {
@@ -862,6 +867,37 @@ button.accordion-button:focus {
   }
   .kiddies .child {
     padding: 20px; /* Optional: Add padding to the child container for better content separation */
+  }
+}
+
+/* @media (min-width: 768px) {
+  .container3 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    top: auto;
+    height: auto;
+  }
+
+  .box2 {
+    width: calc(24% - 16px); 
+    margin: 8px; 
+  }
+} */
+
+
+@media (max-width: 767px) {
+  .container3 {
+    display: block;
+    position: static;
+  }
+
+  .box2 {
+    width: 100%;
+    margin: 16px 0; /* Add spacing between boxes */
+  }
+  .text3 {
+    text-align: center;
   }
 }
 
