@@ -37,10 +37,6 @@ header {
   color: white;
   cursor: pointer; }*/
 
-.container a {
-  color: white;
-}
-
 .left-navbar li {
   list-style: none;
 }
@@ -844,7 +840,7 @@ button.accordion-button:focus {
     display: block; /* Display the image */
   }
   .kiddies {
-    background: none; /* Remove background image */
+media    background: none; /* Remove background image */
   }
 }
 
@@ -866,6 +862,11 @@ button.accordion-button:focus {
   }
   .rating {
     height: 8%;
+    top: 76%;
+  }
+  .abuja {
+    height: 80%;
+
   }
 }
 
