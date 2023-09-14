@@ -542,9 +542,7 @@ h1 {
   position: relative;
 }
 .featured-text {
-  position: absolute;
-  left: 2%;
-  top: 8%;
+  margin: 2%;
 }
 .featured-link1 {
   width: 100%;
@@ -908,3 +906,11 @@ a {
   }
 
 } */
+.links .col{
+  border-right: 2px solid black;
+  margin: 3px;
+  font-size: 12px;
+}
+.links .col a {
+  float: right;
+}
