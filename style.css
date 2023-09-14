@@ -473,14 +473,15 @@ h1 {
   animation: flash 2s infinite;
   float: right;
 }
-.text1 {
-  
-  
+.abuja-caption a{
+  text-decoration: none;
+  color: black;
   font-family: "Times New Roman", Times, serif;
   margin-bottom: 0;
+  font-weight: 700;
   
 }
-.text1:hover {
+.abuja-caption a:hover {
   text-decoration: underline;
   color: blue;
   transition: all 0.3s ease;
