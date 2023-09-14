@@ -509,7 +509,7 @@ h1 {
   position: absolute;
   border-radius: 16px;
   width: 42%;
-  height: 8%;
+  height: 10%;
   top: 46%;
   left: 2%;
   font-family: "Times New Roman", Times, serif;
@@ -775,7 +775,7 @@ button.accordion-button:focus {
 }
 
 
-@media (max-width: 880px) {
+/* @media (max-width: 880px) {
   
     .navbar-toggler {
         display: block;
@@ -798,7 +798,7 @@ button.accordion-button:focus {
   .navbar-container {
     margin: 0;
   }
-}
+} */
 
 
   /* .left-navbar,
@@ -862,6 +862,9 @@ button.accordion-button:focus {
   }
   .kiddies .child {
     padding: 20px; /* Optional: Add padding to the child container for better content separation */
+  }
+  .rating {
+    height: 8%;
   }
 }
 
