@@ -621,14 +621,7 @@ h1 {
   left: 7.5%;
   top: 15%;
 }
-.payment {
-  width: 20%;
-  height: 70%;
-  top: 15%;
-  right: 7.5%;
-  position: absolute;
-  display: block;
-}
+
 .contact-medium {
   color: black;
   font-size: 18px;
@@ -850,6 +843,9 @@ button.accordion-button:focus {
     height: 80%;
   }
   .contact-medium2 {
+    display: none;
+  }
+  .payment {
     display: none;
   }
 }
