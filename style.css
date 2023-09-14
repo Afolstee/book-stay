@@ -402,9 +402,9 @@ h1 {
 }
 
 .box2 {
-  width: 24%;
+  width: 100%;
   height: 90%;
-  margin: 2px;
+  /* margin: 2px; */
   background: whitesmoke;
   border: 2px solid transparent;
   color: white;
@@ -421,9 +421,9 @@ h1 {
   font-weight: 800;
   font-size: 30px;
   font-family: "Times New Roman", Times, serif;
-  position: absolute;
   margin-bottom: 0;
-  left: 2%;
+  margin: 12px;
+  padding: 5px;
 }
 .abuja {
   width: 100%;
@@ -450,7 +450,8 @@ h1 {
   height: 50%;
   color: #000;
   background: rgb(238, 226, 226);
-  position: relative;
+  display: block;
+  
 }
 
 .abuja-caption p {
@@ -463,25 +464,20 @@ h1 {
   margin: 0% 3%;
   
 } */
-.abuja-heading {
-  position: absolute;
-  top: 12%;
-  margin-bottom: 0;
-  text-align: center;
 
-}
+
 .text2 {
-  font-size: 15px;
+  font-size: ;
   font-weight: bold;
   color: red;
   animation: flash 2s infinite;
   float: right;
 }
 .text1 {
-  font-weight: 700;
-  font-size: 20px;
-  padding: 3% 0%;
+  
+  
   font-family: "Times New Roman", Times, serif;
+  margin-bottom: 0;
   
 }
 .text1:hover {
@@ -492,12 +488,8 @@ h1 {
 }
 .text3 {
   color: #000;
-  font-weight: 400;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 15px;
-  position: absolute;
-  top: 36%;
-  text-align: center;
+  font-size: 13px;
 }
 
 @keyframes flash {
@@ -886,18 +878,18 @@ button.accordion-button:focus {
 } */
 
 
-@media (max-width: 767px) {
+/* @media (max-width: 767px) {
   .container3 {
     display: block;
-    position: static;
+    position: ;
   }
 
   .box2 {
     width: 100%;
-    margin: 16px 0; /* Add spacing between boxes */
+    margin: 16px 0; 
   }
   .text3 {
     text-align: center;
   }
-}
 
+} */
