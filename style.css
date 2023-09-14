@@ -5,12 +5,10 @@
 body {
   width: auto;
   font-size: 16px;
-  
 }
 header {
   min-width: 100%;
   height: 475px;
-  background: linear-gradient();
 
   position: relative;
 
@@ -63,7 +61,8 @@ header {
   cursor: pointer;
 }
 .rnav {
-  justify-content: right;}
+  justify-content: right;
+}
 
 .nav-item:hover,
 .rnav-item:hover {
@@ -94,7 +93,6 @@ header {
   list-style: none;
   margin: 0 2px;
   padding: 0;
-  position: abol;
 }
 
 #collapse-btn {
@@ -171,7 +169,7 @@ header {
   font-size: 48px;
   position: absolute;
   top: 35%;
-  
+
   left: 2%;
 }
 .col-4 {
@@ -180,7 +178,6 @@ header {
 .check-in-form {
   display: flex;
   justify-content: space-evenly;
-  
 }
 .input-group2 {
   width: 22%;
@@ -234,7 +231,6 @@ header {
   border-radius: 32px 32px 0px 0px;
   top: -38px;
   bottom: 0;
-  border-bottom: ;
 }
 .deals {
   width: 80%;
@@ -293,7 +289,6 @@ header {
   left: 1%;
   bottom: 0;
   margin: 2%;
-  
 }
 .kiddies:hover {
   cursor: pointer;
@@ -302,10 +297,9 @@ header {
 .dwnload {
   width: 100%;
   position: absolute;
-  /* background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.3%); */;
+  /* background: linear-gradient(245.59deg, #4d9559 0%, #38703d 28.3%); */
   align-items: center;
   display: block;
-  
 }
 .container1 {
   display: flex;
@@ -322,7 +316,6 @@ header {
   justify-items: center;
 } */
 .container1 i {
-  display: ;
   font-size: 26px;
   color: black;
   transition: all 0.3s ease;
@@ -401,10 +394,9 @@ h1 {
   width: 100%;
   height: 90%;
   /* margin: 2px; */
-  
+
   border: 2px solid transparent;
-  
-  
+
   display: block;
   position: relative;
 }
@@ -447,7 +439,6 @@ h1 {
   color: #000;
   background: transparent;
   display: block;
-  
 }
 
 .abuja-caption p {
@@ -461,21 +452,18 @@ h1 {
   
 } */
 
-
 .text2 {
-  font-size: ;
   font-weight: bold;
   color: red;
   animation: flash 2s infinite;
   float: right;
 }
-.abuja-caption a{
+.abuja-caption a {
   text-decoration: none;
   color: black;
   font-family: "Times New Roman", Times, serif;
   margin-bottom: 0;
   font-weight: 700;
-  
 }
 .abuja-caption a:hover {
   text-decoration: underline;
@@ -760,17 +748,11 @@ button.accordion-button:focus {
   font-family: "Times New Roman", Times, serif;
   margin: 30px 18px;
 }
-.text6 {
-  position: absolute;
-  top: ;
-}
 .menu-icon {
   width: 40px;
   height: 40px;
   z-index: 1000;
-  color: ;
 }
-
 
 /* @media (max-width: 880px) {
   
@@ -797,8 +779,7 @@ button.accordion-button:focus {
   }
 } */
 
-
-  /* .left-navbar,
+/* .left-navbar,
   .mid-navbar,
   .right-navbar {
       display: none;
@@ -808,7 +789,7 @@ button.accordion-button:focus {
       text-align: center;
   } */
 
-  /* #toggle-btn {
+/* #toggle-btn {
       display: block;
       background: none;
       border: none;
@@ -826,21 +807,15 @@ button.accordion-button:focus {
       display: block !important;
   }
 } */
-  /* Center align items vertically when collapsed */
-  
-}
-.navbar-toggler {
-  
-}
+/* Center align items vertically when collapsed */
 
+.navbar-toggler {
+}
 
 /* For desktop screens (greater than or equal to 768px) */
 @media (min-width: 768px) {
   .desktop-image {
     display: block; /* Display the image */
-  }
-  .kiddies {
-media    background: none; /* Remove background image */
   }
 }
 
@@ -850,12 +825,17 @@ media    background: none; /* Remove background image */
     display: none; /* Hide the image */
   }
   .kiddies {
-    background-image: url('images/child.jpg'); /* Set background image */
+    background-image: url("images/child.jpg"); /* Set background image */
     background-size: cover;
     background-position: bottom right;
   }
   .kiddies .nanny {
-    background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a semi-transparent background color to improve text readability */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.8
+    ); /* Optional: Add a semi-transparent background color to improve text readability */
   }
   .kiddies .child {
     padding: 20px; /* Optional: Add padding to the child container for better content separation */
@@ -866,7 +846,6 @@ media    background: none; /* Remove background image */
   }
   .abuja {
     height: 80%;
-
   }
 }
 
@@ -884,7 +863,6 @@ media    background: none; /* Remove background image */
     margin: 8px; 
   }
 } */
-
 
 /* @media (max-width: 767px) {
   .container3 {
