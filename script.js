@@ -42,3 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
       list2.classList.toggle('show');
   });
 });
+
+document.getElementById('date-selector-button').addEventListener('click', function() {
+    var dateInputs = document.querySelector('.date-selector .date-inputs');
+    dateInputs.classList.toggle('active');
+});
