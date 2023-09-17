@@ -32,18 +32,9 @@ button.addEventListener('click', toggleList);
 //     }
     // JavaScript to toggle the mobile menu
 // JavaScript to toggle the mobile menu
-document.addEventListener('DOMContentLoaded', function () {
-  const toggleBtn = document.getElementById('toggle-btn');
-  const list1 = document.getElementById('collapsible-list');
-  const list2 = document.getElementById('collapsible-list2');
-
-  toggleBtn.addEventListener('click', function () {
-      list1.classList.toggle('show');
-      list2.classList.toggle('show');
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const checkinDate = document.getElementById('checkin').value;
+    const checkoutDate = document.getElementById('checkout').value;
+    alert(`You selected Check-In Date: ${checkinDate} and Check-Out Date: ${checkoutDate}`);
   });
-});
-
-document.getElementById('date-selector-button').addEventListener('click', function() {
-    var dateInputs = document.querySelector('.date-selector .date-inputs');
-    dateInputs.classList.toggle('active');
-});

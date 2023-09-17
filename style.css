@@ -857,26 +857,16 @@ a {
 .links .col a:hover {
   cursor: pointer;
 }
-.date-selector {
-  display: inline-block;
-  position: relative;
-}
-
-.date-selector input[type="date"] {
-  width: 150px;
-  padding: 5px;
-}
-
-.date-selector button {
-  padding: 5px 10px;
+.calendar-button {
   background-color: #007bff;
   color: white;
   border: none;
+  padding: 10px 20px;
   cursor: pointer;
 }
 
-/* Hide the date input fields initially */
-.date-inputs {
+/* Styles for the calendar container */
+.calendar-container {
   display: none;
   position: absolute;
   top: 100%;
@@ -886,7 +876,29 @@ a {
   padding: 10px;
 }
 
-/* Show the date input fields when the button is clicked */
-.date-selector.active .date-inputs {
-  display: block;
+/* Styles for the calendar */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.calendar-cell {
+  text-align: center;
+  padding: 5px;
+  cursor: pointer;
+}
+.bookbtn {
+  width: 70px;
+  height: 32px;
+  margin: 5% 40%;
+  color: white;
+  background: rgb(70, 146, 70);
+  border: 0px ;
+  border-radius: 4px;
+}
+.bookbotn {
+  width: 100%;
+  height: 50px;
+  
 }
