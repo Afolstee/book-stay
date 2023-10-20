@@ -125,7 +125,7 @@
                   </ul>
                 </li>
               </ul>
-              <form class="d-flex mt-3" role="search">
+              <!-- <form class="d-flex mt-3" role="search">
                 <input
                   class="form-control me-2"
                   type="search"
@@ -135,12 +135,13 @@
                 <button class="btn btn-outline-success" type="submit">
                   Search
                 </button>
-              </form>
-              <div class="bookbotn">
-              <button class="bookbtn" type="submit">
-                Book
-              </button>
-            </div>
+              </form> -->
+              <div class="gcse-search"></div>
+              <!-- <div class="bookbotn">
+                <a href="#"
+                  ><button class="bookbtn" type="submit">Book</button></a
+                >
+              </div> -->
             </div>
           </div>
         </div>
@@ -148,7 +149,7 @@
       <div class="hero-text animate animate--infinite bounce">HOTELS</div>
       <div class="check-in" id="stickyContainer">
         <div class="check-in-form">
-          <div class="input-group2 input-group-lg mt-3">
+          <div class="input-group2 input-group-lg mt-4">
             <input
               type="text"
               class="form-control"
@@ -157,25 +158,32 @@
               placeholder="Destination-City, Landmark or Region"
             />
           </div>
-          <div class="input-group2 input-group-lg mt-3">
+
+          <div class="input-group2 input-group-lg mt-">
+            <div class="check-in-2">
+              <p>IN</p>
+            </div>
             <input
-              type="text"
+              type="date"
               class="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-lg"
               placeholder="Check In"
             />
           </div>
-          <div class="input-group2 input-group-lg mt-3">
+          <div class="input-group2 input-group-lg mt-">
+            <div class="check-in-2">
+              <p>OUT</p>
+            </div>
             <input
-              type="text"
+              type="date"
               class="form-control"
               aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-lg"
               placeholder="Check Out"
             />
           </div>
-          <select class="form-select2 mt-3" aria-label="Default select example">
+          <select class="form-select2 mt-4" aria-label="Default select example">
             <option selected>Number of Rooms</option>
             <option value="1">1-2</option>
             <option value="2">3-5</option>
@@ -192,7 +200,7 @@
             </div> -->
           <button type="button" class="btn btn-primary mt-3">Search</button>
         </div>
-        <div class="form-check ms-3">
+        <div class="form-check ms-5">
           <input
             class="form-check-input"
             type="checkbox"
@@ -204,7 +212,62 @@
           </label>
         </div>
       </div>
-      
+      <div class="check-in2">
+        <div class="check-in-grid">
+          <div class="check-in3">
+            <p class="check-in-text">DESTINATION</p>
+            <div class="input-group3 ms-4">
+              <input
+                type="text"
+                class="form-control1"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div class="check-in3">
+            <p class="check-in-text">IN</p>
+            <div class="input-group3 ms-4">
+              <input
+                type="date"
+                class="form-control1"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="check-in-grid">
+          <div class="check-in3">
+            <p class="check-in-text">OUT</p>
+            <div class="input-group3 ms-4">
+              <input
+                type="date"
+                class="form-control1"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+                placeholder=""
+              />
+            </div>
+          </div>
+          <div class="check-in3">
+            <p class="check-in-text">NO. OF ROOMS</p>
+            <select class="form-select3 ms-4" aria-label="Default select example">
+              <option selected></option>
+              <option value="1">1-2</option>
+              <option value="2">3-5</option>
+              <option value="3">6-7</option>
+            </select>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="search-check">
+        <button type="button" class="btn-check-in mt-">Search</button>
+      </div>
     </header>
     <div class="main-container">
       <div class="deals">
@@ -421,7 +484,7 @@
         </div>
       </div>
     </div>
-        
+
     <div class="faq">
       <h1 class="faq-text">FAQ.</h1>
       <div class="accordion accordion-flush" id="accordionFlushExample">
@@ -683,6 +746,10 @@
       </div>
     </footer>
 
+    <script
+      async
+      src="https://cse.google.com/cse.js?cx=f63039a2b6a804688"
+    ></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <!-- <script src="/js/bootstrap.bundle.js"></script> -->
