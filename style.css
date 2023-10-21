@@ -255,12 +255,12 @@ header {
 .input-group3 input:focus {
   border: none;
 }
-.search-check a:hover {
+.search-check button:hover {
   cursor: pointer;
   background-color: #1969bf;
 }
-.search-check a:visited {
-  background-color: rgb(192, 243, 192);
+.search-check button:focus {
+  background-color: rgb(84, 129, 84);
 }
 .btn-check-in {
   width: 18%;
