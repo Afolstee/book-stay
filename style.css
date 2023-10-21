@@ -856,6 +856,9 @@ button.accordion-button:focus {
   .check-in2 {
     display: none;
   }
+  .search-check {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .desktop-image {
