@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookStay - Premium Hotel Bookings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">BookStay</a>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#hotels" class="nav-link">Hotels</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Find Your Perfect Stay</h1>
+            <p>Discover amazing hotels, resorts, and unique accommodations around the world</p>
+            
+            <!-- Enhanced Search Form -->
+            <form class="search-form">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="location">Where are you going?</label>
+                        <input type="text" id="location" class="form-input" placeholder="Enter destination">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkin">Check-in</label>
+                        <input type="date" id="checkin" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="checkout">Check-out</label>
+                        <input type="date" id="checkout" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="guests">Guests</label>
+                        <select id="guests" class="form-input">
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4+ Guests</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-btn">Search</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Featured Hotels -->
+    <section class="section" id="hotels">
+        <div class="container">
+            <h2 class="section-title">Featured Hotels</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="card-badge">Featured</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$299/night</div>
+                        <h3 class="card-title">Luxury Ocean Resort</h3>
+                        <p class="card-description">Experience breathtaking ocean views and world-class amenities at this stunning beachfront resort.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="card-badge">Popular</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$189/night</div>
+                        <h3 class="card-title">Mountain View Lodge</h3>
+                        <p class="card-description">Cozy mountain retreat with panoramic views, perfect for a peaceful getaway.</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');">
+                        <div class="card-badge">New</div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-price">$349/night</div>
+                        <h3 class="card-title">Urban Boutique Hotel</h3>
+                        <p class="card-description">Stylish city hotel in the heart of downtown, featuring modern design and premium services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Section -->
+    <section class="family-section" id="about">
+        <div class="container">
+            <div class="family-content">
+                <div class="family-text">
+                    <h2>Perfect for Families</h2>
+                    <p>Create unforgettable memories with your loved ones. Our family-friendly hotels offer spacious rooms, kid-friendly amenities, and activities for all ages. From poolside fun to adventure excursions, we ensure every family member has an amazing experience.</p>
+                </div>
+                <div class="family-image">
+                    <img src="https://images.unsplash.com/photo-1544986581-efac024faf62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family enjoying hotel amenities">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    What's included in the room rate?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Room rates typically include accommodation, WiFi, and basic amenities. Additional services like breakfast, spa treatments, and activities may be available for an extra charge.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Can I cancel my booking?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Cancellation policies vary by hotel and rate type. Most bookings can be cancelled free of charge up to 24-48 hours before check-in. Please check your specific booking terms.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    Do you offer group bookings?
+                    <span>+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We offer special rates and services for group bookings of 10 rooms or more. Contact our group sales team for customized packages and pricing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BookStay</h3>
+                    <p>Your trusted partner for unforgettable hotel experiences worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">f</a>
+                        <a href="#" class="social-link">t</a>
+                        <a href="#" class="social-link">i</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Hotels</a>
+                    <a href="#">Special Offers</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="#">Help Center</a>
+                    <a href="#">Booking Help</a>
+                    <a href="#">Cancellation Policy</a>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <a href="tel:+1234567890">+1 (234) 567-890</a>
+                    <a href="mailto:info@bookstay.com">info@bookstay.com</a>
+                    <p>123 Hotel Street<br>City, State 12345</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BookStay. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
