@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mini Calendar Example</title>
+    <style>
+      form {
+        display: flex;
+        height: 50%;
+        width: 100%;
+      }
+      .form1 {
+        width: 40%;
+        height: 200px;
+      }
+      #checkin,
+      #checkout {
+        width: 50%;
+        height: 55%;
+        border: 3px solid transparent;
+        border-radius: 4px;
+        background-color: whitesmoke;
+      }
+      input {
+        height: 41%;
+      }
+      .checkin1 {
+        height: 70%;
+      }
+      label {
+        position: absolute;
+        pointer-events: none;
+        left: 10px;
+        top: 10px;
+        transition: 0.2s;
+      }
+
+      /* Move labels up when the input fields are focused or contain text */
+      input:focus + label,
+      input:valid + label {
+        top: -20px;
+        font-size: 14px;
+        color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form1">
+      <form>
+        <div class="checkin1">
+          <!-- <label for="checkin">Check-In</label> -->
+          <input
+            type="date"
+            id="checkin"
+            name="checkin"
+            required
+            placeholder=""
+          />
+          <label for="checkin">Check-In Date</label>
+        </div>
+
+        <div class="checkin1">
+          <label for="checkout">Check-Out</label>
+          <input type="date" id="checkout" name="checkout" required />
+        </div>
+
+        <input type="submit" value="Check Availability" />
+      </form>
+    </div>
+    <script>
+      document.querySelector("form").addEventListener("submit", function (e) {
+        e.preventDefault();
+        const checkinDate = document.getElementById("checkin").value;
+        const checkoutDate = document.getElementById("checkout").value;
+        alert(
+          `You selected Check-In Date: ${checkinDate} and Check-Out Date: ${checkoutDate}`
+        );
+      });
+    </script>
+  </body>
+</html>
